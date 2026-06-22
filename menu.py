@@ -1,3 +1,16 @@
+from ocorrencias import (
+    cadastrar_ocorrencia,
+    listar_ocorrencias,
+    atender_proxima_ocorrencia,
+    atender_maior_prioridade,
+    buscar_ocorrencia_por_id,
+    buscar_ocorrencias_por_nome_ou_tipo,
+    ordenar_ocorrencias,
+    ver_historico_acoes,
+    desfazer_ultima_acao,
+)
+
+
 while True:
     print("\n===== MENU =====")
     print("1 - Cadastrar ocorrência")
@@ -14,32 +27,23 @@ while True:
     opcao = input("Escolha uma opção: ")
 
     if opcao == "1":
-        pass
-        # cadastrar_ocorrencia()
+        cadastrar_ocorrencia()
     elif opcao == "2":
-        pass
-        # listar_ocorrencias()
+        listar_ocorrencias()
     elif opcao == "3":
-        pass
-        # atender_proxima_ocorrencia()
+        atender_proxima_ocorrencia()
     elif opcao == "4":
-        pass
-        # atender_maior_prioridade()
+        atender_maior_prioridade()
     elif opcao == "5":
-        pass
-        # buscar_ocorrencia_por_id()
+        buscar_ocorrencia_por_id()
     elif opcao == "6":
-        pass
-        # buscar_ocorrencias_por_nome_ou_tipo()
+        buscar_ocorrencias_por_nome_ou_tipo()
     elif opcao == "7":
-        pass
-        # ordenar_ocorrencias()
+        ordenar_ocorrencias()
     elif opcao == "8":
-        pass
-        # ver_historico_acoes()
+        ver_historico_acoes()
     elif opcao == "9":
-        pass
-        # desfazer_ultima_acao()
+        desfazer_ultima_acao()
     elif opcao == "0":
         print("Saindo...")
         break
