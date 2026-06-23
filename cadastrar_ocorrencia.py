@@ -1,3 +1,5 @@
+from util import ocorrencias, lista_ocorrencia, historico_acoes, gerarHash, gerarID
+
 def cadastrar_ocorrencia():
     print("CADASTRO DE OCORRÊNCIAS")
 
