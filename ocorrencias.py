@@ -1,11 +1,21 @@
 ocorrencias = []
 historico_acoes = []
 
+# def gerarID():
 
 def cadastrar_ocorrencia():
-    """Adicionar uma ocorrência à lista de ocorrências."""
-    print("Função cadastrar_ocorrencia ainda não implementada.")
+    print("CADASTRO DE OCORRÊNCIAS")
 
+    cod = input("Código: ")
+    nome = input("Nome: ")
+    tipo = input("Assunto: ")
+    descricao = input("Descrição: ")
+    prioridade = int(input("Prioridade (1-5): "))
+    ordem = int(input("Ordem Chegada: "))
+    status = input("Status: ")
+
+    ocorrencias.append({cod, nome, tipo, descricao, prioridade, status})
+    historico_acoes.append("Cadastro da Ocorrência {cod}")
 
 def listar_ocorrencias():
     """Listar todas as ocorrências cadastradas."""
@@ -13,9 +23,13 @@ def listar_ocorrencias():
 
 
 def atender_proxima_ocorrencia():
-    """Atender a próxima ocorrência na fila."""
-    print("Função atender_proxima_ocorrencia ainda não implementada.")
+    print("Atendimento de Ocorrência por Ordem de chegada")
 
+    print()
+
+    for i in len(ocorrencias):
+
+        
 
 def atender_maior_prioridade():
     """Atender a ocorrência de maior prioridade."""
