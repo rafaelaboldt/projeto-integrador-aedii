@@ -1,0 +1,1 @@
+from util import ocorrencias, lista_ocorrencia, historico_acoes, gerarID, gerarHash 

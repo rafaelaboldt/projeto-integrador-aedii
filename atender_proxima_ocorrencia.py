@@ -1,3 +1,5 @@
+from util import ocorrencias, lista_ocorrencia, historico_acoes, gerarID, gerarHash 
+
 def atender_proxima_ocorrencia():
     print("Atendimento de Ocorrência por Ordem de chegada")
 
