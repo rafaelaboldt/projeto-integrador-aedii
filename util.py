@@ -1,6 +1,5 @@
-ocorrencias = {} # dicionário que armazena o cadastro das ocorrências
-lista_ocorrencia = [] # lista que armazena a ordem das ocorrências cadastradas
-historico_acoes = [] # lista de logs
+import time
+from estrutura import ocorrencias, fila_ocorrencia, historico_acoes
 
 def gerarID(nome):
     soma = 0
@@ -21,7 +20,7 @@ def gerarHash(cod):
 
     return hash_val % 55
 
-def buscarHash(cod):
+def buscarOcorrencia(cod):
     posicao = gerarHash(cod)
     gaveta = ocorrencias[posicao]
 
@@ -30,9 +29,11 @@ def buscarHash(cod):
             return info
     return None
 
+def adicionaLog(texto):
+    historico_acoes.append(texto)
 
+def titulo(texto):
+    print(f"\n >>> {texto} <<< \n")
 
-
-
-
- 
+def tempo(num):
+    return time.sleep(num) 
