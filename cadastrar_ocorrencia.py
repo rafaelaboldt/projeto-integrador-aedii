@@ -1,7 +1,8 @@
-from util import ocorrencias, lista_ocorrencia, historico_acoes, gerarHash, gerarID
+from util import gerarHash, gerarID, titulo, adicionaLog, tempo
+from estrutura import ocorrencias, fila_ocorrencia, historico_acoes
 
 def cadastrar_ocorrencia():
-    print("CADASTRO DE OCORRÊNCIAS")
+    titulo("Cadastro de Ocorrências")
 
     nome = input("Nome: ")
     cod = gerarID(nome)
@@ -15,14 +16,24 @@ def cadastrar_ocorrencia():
     
     dados = (nome, tipo, descricao, prioridade, status)
 
+    tempo(2)
+
+    #verificando se os campos estão vazios ou não
+    if dados == "":
+        return ("Os campos estão em branco!")
+        
+
     if posicao not in ocorrencias:
         ocorrencias[posicao] = []
 
     #                             K  ,  V
     ocorrencias[posicao].append((cod, dados))
-    lista_ocorrencia.append(cod)
-    historico_acoes.append("Cadastro da Ocorrência {cod}")
+    fila_ocorrencia.append(cod)
+    adicionaLog("Cadastro da Ocorrência {cod}")
 
-    print(ocorrencias)
+    tempo(2)
 
-    print(f"Ocorrência cadastrada com sucesso! Código: {cod}")
+    print(f"Ocorrência cadastrada com sucesso!")
+    print(f"Código da Ocorrência: {cod}")
+    
+    tempo(3)
