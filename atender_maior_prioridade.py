@@ -1,4 +1,5 @@
-from util import ocorrencias, lista_ocorrencia, historico_acoes, gerarHash, gerarID
+from util import historico_acoes, adicionaLog, tempo, titulo
+from estrutura import deque, fila_ocorrencia, historico_acoes, ocorrencias
 
 def atender_maior_prioridade():
     """Atender a ocorrência de maior prioridade."""
