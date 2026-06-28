@@ -1,1 +1,5 @@
 from util import ocorrencias, lista_ocorrencia, historico_acoes, gerarHash, gerarID
+
+def ordenar_ocorrencias():
+    """Listar todas as ocorrências cadastradas."""
+    print("Função listar_ocorrencias ainda não implementada.")

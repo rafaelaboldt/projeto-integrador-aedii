@@ -1,6 +1,6 @@
-ocorrencias = []
-lista_ocorrencia = []
-historico_acoes = []
+ocorrencias = {} # dicionário que armazena o cadastro das ocorrências
+lista_ocorrencia = [] # lista que armazena a ordem das ocorrências cadastradas
+historico_acoes = [] # lista de logs
 
 def gerarID(nome):
     soma = 0
@@ -14,12 +14,25 @@ def gerarID(nome):
     return prefixo + "-" + str(codigo)
 
 def gerarHash(cod):
-    hash_cod = cod
-    
-    hash_cod ^ = hash_cod >> 16
-    hash_cod *= 0x85ebca6b
-    hash_cod &= 0xFFFFFFFF
-    
-    hash_cod ^ = hash_cod >> 13
-    hash_cod *= 0xc2b2ae35
-    return hash_cod % 55
+    hash_val = 5381
+
+    for char in cod:
+        hash_val = ((hash_val << 5) + hash_val) + ord(char)
+
+    return hash_val % 55
+
+def buscarHash(cod):
+    posicao = gerarHash(cod)
+    gaveta = ocorrencias[posicao]
+
+    for chave, info in gaveta:
+        if chave == cod:
+            return info
+    return None
+
+
+
+
+
+
+ 
