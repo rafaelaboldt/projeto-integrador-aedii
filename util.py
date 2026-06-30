@@ -37,3 +37,18 @@ def titulo(texto):
 
 def tempo(num):
     return time.sleep(num) 
+
+def ordenarFilaOcorrencia(fila):
+    n = len(fila)
+    
+    for i in range(n):
+        flag = False
+        for j in range(0, n - i - 1):
+            if fila[j] > fila[j + 1]:
+                fila[j], fila[j + 1] = fila[j + 1], fila[j]
+                flag = True
+                
+        if not flag:
+            break
+            
+    return fila
