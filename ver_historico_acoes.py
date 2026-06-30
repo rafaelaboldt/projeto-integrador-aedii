@@ -1,6 +1,17 @@
-from util import historico_acoes, adicionaLog, tempo, titulo
-from estrutura import deque, fila_ocorrencia, historico_acoes, ocorrencias
+from util import tempo, titulo
+from estrutura import historico_acoes
+
 
 def ver_historico_acoes():
-    """Exibir o histórico de ações realizadas."""
-    print("Função ver_historico_acoes ainda não implementada.")
+    
+    titulo("Histórico de ações")
+
+    if not historico_acoes:
+        print("Nenhuma ação registrada ainda.")
+        return
+
+    print("Últimas ações realizadas (Topo da Pilha):\n")
+    for indice, acao in enumerate(reversed(historico_acoes), start=1):
+        print(f"{indice} - {acao}")
+
+    tempo(1)
