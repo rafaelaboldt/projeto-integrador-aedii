@@ -27,16 +27,17 @@ def atender_proxima_ocorrencia():
     if confirm == "Y":
         adicionaLog(f"Confirmação da ocorrência {primeira_ocorrencia} atendida pela ordem de chegada.")
         ocorrencia_apagada = fila_ocorrencia.popleft()
-        tempo(2)
+#        tem que apagar da hash table também 
+        tempo(1)
         adicionaLog(f"Ocorrência {ocorrencia_apagada} deletada da fila de ocorrências")
         print(f"Atendimento confirmado para a Ocorrência {ocorrencia_apagada}")
-        tempo(2)
+        tempo(1)
     elif confirm == "N":
-        print("Ação cancelada")
-        tempo(2)
+        print("Nenhuma ação realizada!")
+        tempo(1)
     else:
         print("Apenas 'y'ou 'n'")
-        tempo(2)
+        tempo(1)
 
 
    
