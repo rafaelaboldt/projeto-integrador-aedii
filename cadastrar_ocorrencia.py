@@ -16,24 +16,17 @@ def cadastrar_ocorrencia():
     
     dados = (nome, tipo, descricao, prioridade, status)
 
-    tempo(2)
-
     #verificando se os campos estão vazios ou não
     if dados == "":
         return ("Os campos estão em branco!")
         
-
     if posicao not in ocorrencias:
         ocorrencias[posicao] = []
 
     #                             K  ,  V
-    ocorrencias[posicao].append((cod, dados))
+    ocorrencias[posicao].append((cod, dados)) # dicionário com lista de tuplas
     fila_ocorrencia.append(cod)
     adicionaLog("Cadastro da Ocorrência {cod}")
 
-    tempo(2)
-
     print(f"Ocorrência cadastrada com sucesso!")
     print(f"Código da Ocorrência: {cod}")
-    
-    tempo(3)
