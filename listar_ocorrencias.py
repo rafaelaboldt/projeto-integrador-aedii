@@ -1,6 +1,15 @@
-from util import historico_acoes, adicionaLog, tempo, titulo
-from estrutura import deque, fila_ocorrencia, historico_acoes, ocorrencias
+from util import titulo, buscarOcorrencia
+from estrutura import fila_ocorrencia, ocorrencias
 
 def listar_ocorrencias():
-    """Listar todas as ocorrências cadastradas."""
-    print("Função listar_ocorrencias ainda não implementada.")
+
+    titulo("Listar Ocorrências")
+
+    if not ocorrencias:
+        print("Nenhuma ocorrência cadastrada.")
+        return
+
+    for i in fila_ocorrencia:
+        ocorrencia = buscarOcorrencia(i)
+        if ocorrencia:
+            print(f"Código: {i} - Nome: {ocorrencia[0]} - Tipo: {ocorrencia[1]} - Prioridade: {ocorrencia[3]} - Status: {ocorrencia[4]}")
